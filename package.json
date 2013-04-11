@@ -1,0 +1,14 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "Nodejs Extension using C++",
+  "main": "./build/Release/hello.node",
+  "scripts": {
+    "preinstall": "node-gyp rebuild",
+    "preuninstall": "rm -rf build/*"
+  },
+  "repository": "",
+  "readmeFilename": "README.md",
+  "author": "",
+  "license": ""
+}
