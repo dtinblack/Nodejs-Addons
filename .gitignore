@@ -1,4 +1,2 @@
-/Eclipse
-/nodejs
-*.html
+/src/hello.cc
 .DS_Store

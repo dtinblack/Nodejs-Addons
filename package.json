@@ -1,8 +1,8 @@
 {
-  "name": "hello",
+  "name": "fruit",
   "version": "1.0.0",
   "description": "Nodejs Extension using C++",
-  "main": "./build/Release/hello.node",
+  "main": "./build/Release/fruit.node",
   "scripts": {
     "preinstall": "node-gyp rebuild",
     "preuninstall": "rm -rf build/*"

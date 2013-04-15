@@ -1,8 +1,8 @@
 {
   "targets": [
     {
-      "target_name": "hello",
-      "sources" : [ "src/hello.cc" ]
+      "target_name": "fruit",
+      "sources" : [ "src/fruit.cc", "src/fruit_wrap.cc" ]
     }
    ]
 }
