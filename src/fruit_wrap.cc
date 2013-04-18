@@ -51,8 +51,7 @@ Handle<Value> Fruit::GetCalories(const Arguments& args) {
   HandleScope scope;
 
   Fruit* obj = ObjectWrap::Unwrap<Fruit>(args.This());
-  
-  obj->calories_ = DoSomething( obj->calories_);
-  
+    
   return scope.Close(Number::New(obj->calories_));
 }
+
