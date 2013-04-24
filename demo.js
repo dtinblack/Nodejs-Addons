@@ -2,12 +2,8 @@
 
 var addon = require('fruit');
 
-// initialise two objects with weights and calories
-
 var apple = new addon.Fruit(5,7);
 var pear  = new addon.Fruit(3,6); 
-
-// display information
 
 console.log("Apple: weight =  " + apple.getWeight() + " calories = " 
                                 + apple.getCalories());
@@ -15,3 +11,8 @@ console.log("Apple: weight =  " + apple.getWeight() + " calories = "
 console.log("Pear: weight =  " + pear.getWeight() + " calories = "
                                 + pear.getCalories());
 
+var bunch = new addon.Grapes( 50, 2, 2 );
+
+console.log("Calories of a grape: " + bunch.getCalories());   
+
+console.log("Total weight of grapes: " + bunch.getBunchWeight());

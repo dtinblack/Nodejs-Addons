@@ -8,6 +8,7 @@ using namespace v8;
 
 void InitAll(Handle<Object> exports) {
   Fruit::Init(exports);
+  Grapes::Init(exports); 
 }
 
 NODE_MODULE(fruit, InitAll)

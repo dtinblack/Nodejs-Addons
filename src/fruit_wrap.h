@@ -3,23 +3,48 @@
 
 #include <node.h>
 
+using namespace v8;
+
 class Fruit : public node::ObjectWrap {
  public:
   
-    Fruit();
+    Fruit( double weight, double calories );
   ~Fruit();
   
-  static void Init(v8::Handle<v8::Object> exports);
+  static Persistent<FunctionTemplate> fruit_template;
   
-  static v8::Handle<v8::Value> New(const v8::Arguments& args);
-  
-  static v8::Handle<v8::Value> GetWeight(const v8::Arguments& args);
-  static v8::Handle<v8::Value> GetCalories(const v8::Arguments& args);
-  
- private:
+  static void Init(Handle<Object> exports);  
+  static Handle<Value> New(const Arguments& args);  
+  static Handle<Value> GetWeight(const Arguments& args);
+  static Handle<Value> GetCalories(const Arguments& args);
+     
+protected:
+
    double weight_;
    double calories_;
        
 };
+
+class Grapes : public Fruit {
+
+public:
+    
+     Grapes( double number, double weight, double calories );
+     ~Grapes();
+     
+    static Persistent<FunctionTemplate> grapes_template;
+    
+    static void Init(Handle<Object> exports);
+    static Handle<Value> New(const Arguments& args);
+    static Handle<Value> GetBunchWeight(const Arguments& args);
+     
+protected:
+
+     double number_;         
+
+};
+
+
+
 
 #endif
