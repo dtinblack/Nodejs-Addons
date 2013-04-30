@@ -17,6 +17,7 @@ class Fruit : public node::ObjectWrap {
   static Handle<Value> New(const Arguments& args);  
   static Handle<Value> GetWeight(const Arguments& args);
   static Handle<Value> GetCalories(const Arguments& args);
+  static Handle<Value> GetJuice(const Arguments& args);
      
 protected:
 
@@ -37,6 +38,8 @@ public:
     static void Init(Handle<Object> exports);
     static Handle<Value> New(const Arguments& args);
     static Handle<Value> GetBunchWeight(const Arguments& args);
+    
+    static Handle<Value> GetJuice(const Arguments& args);
      
 protected:
 

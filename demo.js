@@ -11,8 +11,12 @@ console.log("Apple: weight =  " + apple.getWeight() + " calories = "
 console.log("Pear: weight =  " + pear.getWeight() + " calories = "
                                 + pear.getCalories());
 
+console.log("Type of juice: ", apple.getJuice());
+
 var bunch = new addon.Grapes( 50, 2, 2 );
 
 console.log("Calories of a grape: " + bunch.getCalories());   
 
 console.log("Total weight of grapes: " + bunch.getBunchWeight());
+
+console.log("Type of juice: ", bunch.getJuice());

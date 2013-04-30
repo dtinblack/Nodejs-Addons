@@ -24,6 +24,7 @@ void Fruit::Init(Handle<Object> exports) {
   
   NODE_SET_PROTOTYPE_METHOD(fruit_template, "getWeight", GetWeight);
   NODE_SET_PROTOTYPE_METHOD(fruit_template, "getCalories", GetCalories);
+  NODE_SET_PROTOTYPE_METHOD(fruit_template, "getJuice", GetJuice);
                
   exports->Set(String::NewSymbol("Fruit"), fruit_template->GetFunction());
   
@@ -59,6 +60,13 @@ Handle<Value> Fruit::GetCalories(const Arguments& args) {
   
 }
 
+Handle<Value> Fruit::GetJuice(const Arguments& args ) {
+  HandleScope scope;
+  
+  return scope.Close(String::New("Fruit Juice"));
+
+}
+
 Persistent<FunctionTemplate> Fruit::fruit_template;
 
 Grapes::Grapes( double number, double weight, double calories )
@@ -78,7 +86,8 @@ void Grapes::Init(Handle<Object> exports) {
   
   grapes_template->SetClassName(String::NewSymbol("Grapes"));
   
-  NODE_SET_PROTOTYPE_METHOD(grapes_template, "getBunchWeight", GetBunchWeight); 
+  NODE_SET_PROTOTYPE_METHOD(grapes_template, "getBunchWeight", GetBunchWeight);
+  NODE_SET_PROTOTYPE_METHOD(grapes_template, "getJuice", GetJuice ); 
   
   exports->Set(String::NewSymbol("Grapes"), grapes_template->GetFunction());
    
@@ -109,6 +118,13 @@ Handle<Value> Grapes::GetBunchWeight(const Arguments& args) {
     double total_weight = obj->number_ * obj->weight_;
             
     return scope.Close(Number::New( total_weight )); 
+
+}
+
+Handle<Value> Grapes::GetJuice(const Arguments& args ) {
+  HandleScope scope;
+  
+  return scope.Close(String::New("Grape Juice"));
 
 }
 
