@@ -5,6 +5,8 @@
 
 using namespace v8;
 
+
+  
 class Fruit : public node::ObjectWrap {
  public:
   
@@ -18,11 +20,22 @@ class Fruit : public node::ObjectWrap {
   static Handle<Value> GetWeight(const Arguments& args);
   static Handle<Value> GetCalories(const Arguments& args);
   static Handle<Value> GetJuice(const Arguments& args);
+  
+  // Sync Callback 
+  
+  static Handle<Value> ChopFruit(const Arguments& args);
+  
+  // Async Callback - requires AsyncWork and AsyncAfter - see below
+  
+  static Handle<Value> SqueezeFruit(const Arguments& args);
      
 protected:
 
-   double weight_;
-   double calories_;
+  static void AsyncWork(uv_work_t *req);
+  static void AsyncAfter(uv_work_t *req);
+   
+  double weight_;
+  double calories_;
        
 };
 

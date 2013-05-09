@@ -13,6 +13,16 @@ console.log("Pear: weight =  " + pear.getWeight() + " calories = "
 
 console.log("Type of juice: ", apple.getJuice());
 
+// use sync callback function
+
+apple.chopFruit( function(msg) { console.log(msg); } );
+
+// use async callback function
+
+console.log("Started to squeeze the Fruit");
+
+apple.squeezeFruit( function(err, result) { console.log("litres squeezed = " + result); } );
+
 var bunch = new addon.Grapes( 50, 2, 2 );
 
 console.log("Calories of a grape: " + bunch.getCalories());   
@@ -20,3 +30,5 @@ console.log("Calories of a grape: " + bunch.getCalories());
 console.log("Total weight of grapes: " + bunch.getBunchWeight());
 
 console.log("Type of juice: ", bunch.getJuice());
+
+
