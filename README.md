@@ -41,7 +41,7 @@ step-by-step approach was invaluable.
 Licence
 =======
 
-
+[See licences](https://github.com/dtinblack/Nodejs-Addons/blob/master/LICENSE)
 		    
     
     
